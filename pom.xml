@@ -10,7 +10,6 @@
         <version>2.0.2</version>
     </parent>
 
-    <groupId>com.empayre</groupId>
     <artifactId>validator-personal-data-proto</artifactId>
     <version>${revision}</version>
     <packaging>jar</packaging>
@@ -45,7 +44,7 @@
     </scm>
 
     <dependencies>
-        <!--empayre-->
+        <!--vality-->
         <dependency>
             <groupId>dev.vality.woody</groupId>
             <artifactId>woody-thrift</artifactId>
@@ -85,6 +84,29 @@
                         <goals>
                             <goal>compile</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.4.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <relocations>
+                                <relocation>
+                                    <pattern>dev.vality.pdvalidator</pattern>
+                                    <shadedPattern>dev.vality.pdvalidator.v${commit.number}</shadedPattern>
+                                </relocation>
+                            </relocations>
+                            <shadedArtifactAttached>true</shadedArtifactAttached>
+                            <shadedClassifierName>v${commit.number}</shadedClassifierName>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
