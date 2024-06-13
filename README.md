@@ -1,0 +1,1 @@
+# validator-personal-data-proto
