@@ -23,13 +23,26 @@
         <revision>SNAPSHOT</revision>
     </properties>
 
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub Empayre Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/empayre/validator-personal-data-proto</url>
-        </repository>
-    </distributionManagement>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <email>devs@vality.dev</email>
+            <organization>Vality</organization>
+            <organizationUrl>https://vality.dev</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/valitydev/validator-personal-data-proto</connection>
+        <developerConnection>scm:git:ssh://github.com/valitydev/validator-personal-data-proto</developerConnection>
+        <url>https://github.com/valitydev/validator-personal-data-proto/tree/master</url>
+    </scm>
 
     <dependencies>
         <!--empayre-->
